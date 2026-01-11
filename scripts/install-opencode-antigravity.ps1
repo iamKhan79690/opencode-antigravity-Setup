@@ -79,10 +79,10 @@ if ($opencodeCmd) {
     $currentVersion = opencode --version
     Write-Info "OpenCode is already installed: $currentVersion"
     Write-Info "Updating to latest version..."
-    npm update -g opencode
+    npm update -g opencode-ai
 } else {
     Write-Info "Installing OpenCode CLI globally..."
-    npm install -g opencode
+    npm install -g opencode-ai
 }
 
 Write-Success "OpenCode CLI is ready"

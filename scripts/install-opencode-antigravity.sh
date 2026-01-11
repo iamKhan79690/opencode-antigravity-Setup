@@ -80,10 +80,10 @@ if command -v opencode &> /dev/null; then
     OPENCODE_CURRENT=$(opencode --version)
     print_info "OpenCode is already installed: $OPENCODE_CURRENT"
     print_info "Updating to latest version..."
-    npm update -g opencode
+    npm update -g opencode-ai
 else
     print_info "Installing OpenCode CLI globally..."
-    npm install -g opencode
+    npm install -g opencode-ai
 fi
 
 print_success "OpenCode CLI is ready"
