@@ -76,6 +76,28 @@ echo ""
 
 print_header "Step 2: Installing OpenCode CLI"
 
+# Fix npm permissions for user-managed global installs (avoids sudo)
+print_info "Setting up npm global directory..."
+NPM_GLOBAL_DIR="$HOME/.npm-global"
+mkdir -p "$NPM_GLOBAL_DIR"
+npm config set prefix "$NPM_GLOBAL_DIR"
+
+# Add to PATH if not already there
+if [[ ":$PATH:" != *":$NPM_GLOBAL_DIR/bin:"* ]]; then
+    print_info "Adding npm global bin to PATH..."
+    export PATH="$NPM_GLOBAL_DIR/bin:$PATH"
+
+    # Add to .bashrc for persistence
+    if [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ]; then
+        grep -q "NPM_GLOBAL_DIR" "$HOME/.bashrc" 2>/dev/null || echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> "$HOME/.bashrc"
+    fi
+
+    # Add to .zshrc for zsh users
+    if [ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ]; then
+        grep -q "NPM_GLOBAL_DIR" "$HOME/.zshrc" 2>/dev/null || echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> "$HOME/.zshrc"
+    fi
+fi
+
 if command -v opencode &> /dev/null; then
     OPENCODE_CURRENT=$(opencode --version)
     print_info "OpenCode is already installed: $OPENCODE_CURRENT"
@@ -254,10 +276,22 @@ echo -e "${GREEN}✓ Configuration complete${NC}"
 echo ""
 
 echo -e "${YELLOW}═══════════════════════════════════════════════════════════════${NC}"
+echo -e "${BLUE}IMPORTANT: Reload Your Shell${NC}"
+echo -e "${YELLOW}═══════════════════════════════════════════════════════════════${NC}"
+echo ""
+echo "The installer has configured npm to use a user-managed directory."
+echo "You need to reload your shell for changes to take effect:"
+echo ""
+echo -e "${GREEN}  source ~/.bashrc${NC}   # For Bash users"
+echo -e "${GREEN}  source ~/.zshrc${NC}    # For Zsh users"
+echo -e "${GREEN}  # Or close and reopen your terminal${NC}"
+echo ""
+
+echo -e "${YELLOW}═══════════════════════════════════════════════════════════════${NC}"
 echo -e "${BLUE}NEXT STEP: Authenticate with Google${NC}"
 echo -e "${YELLOW}═══════════════════════════════════════════════════════════════${NC}"
 echo ""
-echo "Run the following command to sign in:"
+echo "After reloading your shell, run:"
 echo ""
 echo -e "${GREEN}  opencode auth login${NC}"
 echo ""
