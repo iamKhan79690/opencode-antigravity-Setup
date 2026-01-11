@@ -51,53 +51,44 @@ Before running the installer, make sure you have:
 
 ---
 
-## ⚡ Installation (Choose Your Method)
+## ⚡ Installation (Recommended Method)
 
-### Method 1: Automated Script (Recommended) 🎯
+### 🚀 Quick Install (One-Liner) - No Download Required!
+
+**Just copy and paste this command into your terminal - it will download and run everything automatically:**
 
 #### Windows (PowerShell)
 
-1. **Download the script**
-   ```powershell
-   # Navigate to the scripts folder
-   cd opencode-antigravity-setup/scripts
-   ```
+```powershell
+irm https://raw.githubusercontent.com/iamKhan79690/opencode-antigravity-Setup/Opencode-antigravity-Setup/scripts/install-opencode-antigravity.ps1 | iex
+```
 
-2. **Run the installer**
-   ```powershell
-   # Allow script execution (one-time)
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-   # Run the installer
-   .\install-opencode-antigravity.ps1
-   ```
+> **Note:** If you get script execution errors, first run:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
 
 #### macOS / Linux / WSL / Git Bash
 
-1. **Download the script**
-   ```bash
-   # Navigate to the scripts folder
-   cd opencode-antigravity-setup/scripts
-   ```
-
-2. **Run the installer**
-   ```bash
-   # Make script executable
-   chmod +x install-opencode-antigravity.sh
-
-   # Run the installer
-   ./install-opencode-antigravity.sh
-   ```
+```bash
+curl -sSL https://raw.githubusercontent.com/iamKhan79690/opencode-antigravity-Setup/Opencode-antigravity-Setup/scripts/install-opencode-antigravity.sh | bash
+```
 
 ---
 
-### Method 2: Quick Install (One-Liner)
+### 📥 Alternative: Manual Download
 
-#### For Bash Users (macOS/Linux/WSL)
+If you prefer to download the script first and inspect it:
 
-```bash
-curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/scripts/install-opencode-antigravity.sh | bash
-```
+1. **Clone or download this repository:**
+   ```bash
+   git clone https://github.com/iamKhan79690/opencode-antigravity-Setup.git
+   cd opencode-antigravity-Setup
+   ```
+
+2. **Run the installer:**
+   - **Windows:** `.\scripts\install-opencode-antigravity.ps1`
+   - **Mac/Linux:** `./scripts/install-opencode-antigravity.sh`
 
 ---
 
