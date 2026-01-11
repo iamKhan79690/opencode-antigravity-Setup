@@ -1,7 +1,14 @@
 # 🚀 OpenCode Antigravity Setup: One-Click Installation Guide
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![OpenCode](https://img.shields.io/badge/OpenCode-1.1.13+-blue.svg)](https://opencode.ai)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/iamKhan79690/opencode-antigravity-Setup)
+[![Plugin](https://img.shields.io/badge/plugin-antigravity--auth%40beta-green.svg)](https://github.com/NoeFabris/opencode-antigravity-auth)
+
 > **Simplify OpenCode with Google Antigravity OAuth Authentication**
 > Access powerful models like Claude Sonnet 4.5, Claude Opus 4.5 Thinking, and Gemini 3 Pro with your Google credentials - no API keys needed!
+
+[**▶ Quick Install (One-Liner)**](#-quick-install-one-liner---no-download-required) • [**📖 Documentation**](#-documentation) • [**🛠 Troubleshooting**](#-troubleshooting)
 
 ---
 
@@ -500,10 +507,62 @@ This setup guide is provided as-is for educational and personal development use.
 
 ---
 
+## 📋 About This Repository
+
+**Maintainer:** [@iamKhan79690](https://github.com/iamKhan79690)
+
+### Purpose
+
+This repository was created to solve a common problem: **setting up OpenCode with the Antigravity auth plugin was too complicated for beginners and students**.
+
+The journey started when I encountered multiple configuration errors:
+- Wrong config directory paths (APPDATA vs .config)
+- Missing default model causing TUI errors
+- Plugin installation confusion
+- Manual JSON editing mistakes
+
+I created this automated installer to eliminate all those headaches and let anyone get started with OpenCode + Antigravity in **under 5 minutes** with just **one command**.
+
+### Why This Matters
+
+- **Education:** Helps students access powerful AI tools without configuration struggles
+- **Accessibility:** Removes technical barriers for non-developers
+- **Productivity:** Developers can focus on coding, not setup
+
+### Technology Stack
+
+- **Shell Scripting:** Bash (Unix/Linux/macOS) & PowerShell (Windows)
+- **Node.js Package Management:** npm for global package installation
+- **Configuration Management:** JSON-based OpenCode config
+- **Authentication:** OAuth 2.0 flow via Antigravity
+
+### Project Stats
+
+- **Lines of Code:** ~1,800+ (documentation + automation)
+- **Platforms Supported:** 3 (Windows, macOS, Linux)
+- **AI Models Configured:** 9
+- **Installation Time:** ~2-3 minutes
+
+### Star History
+
+If you find this project helpful, please consider giving it a ⭐ star on GitHub!
+
+### Roadmap
+
+- [ ] Add automated testing
+- [ ] Support for more providers
+- [ ] Docker container setup
+- [ ] Video tutorial
+- [ ] Multi-language documentation
+
+---
+
 <div align="center">
 
 ### 🎉 You're All Set!
 
 Run `opencode auth login` and start coding with AI!
+
+**⭐ Star this repo if it helped you!**
 
 </div>
